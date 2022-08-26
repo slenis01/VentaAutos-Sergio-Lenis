@@ -1,0 +1,107 @@
+<div class="card">
+    <div class="card-header">
+        <h3>{{ tituloPagina + ': ' +auto?.marca + ' ' + auto?.modelo }}</h3>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-6 container">
+                <div class="row" style="margin-top: 7em">
+                    <div class="col">
+                        <label>Marca:</label>
+                    </div>
+                    <div class="col">
+                        {{auto?.marca}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label>Modelo:</label>
+                    </div>
+                    <div class="col">
+                        {{auto?.modelo}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label>Año:</label>
+                    </div>
+                    <div class="col">
+                        {{auto?.anio}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label>Color:</label>
+                    </div>
+                    <div class="col">
+                        {{auto?.color}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label>Kilómetros:</label>
+                    </div>
+                    <div class="col">
+                        {{auto?.kilometros | number}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label>Precio:</label>
+                    </div>
+                    <div class="col">
+                        {{auto?.precio | currency}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label>Calificación:</label>
+                    </div>
+                    <div class="col">                        
+                        <estrellas
+                                    [calificacion]="auto.calificacion">
+                        </estrellas>
+                    </div>
+                </div>
+                <button class='btn btn-outline-primary' style="width:10em;float: right;" (click)="onComprar()">Comprar
+                </button>
+            </div>
+            <div class="col-6 container">
+                <div id="carouselAutos" class="carousel slide" data-bs-ride="carousel"
+                     style="margin-top: 2em;margin-bottom: 2em; width: 35em">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <h3 style="color: blue;">Su Selección Actual: {{auto.marca}} {{auto.modelo}}</h3>
+                          <img [src]="auto.imagenUrl" class="d-block w-100" alt="auto.modelo">
+                        </div>
+                      <div class="carousel-item">
+                         R4
+                        <img src="../../../assets/imagenAutos/1-R4.jpg" class="d-block w-100" alt="Renault 4;">
+                      </div>
+                      <div class="carousel-item">
+                        LAND ROVER
+                        <img src="../../../assets/imagenAutos/2-LAND-ROVER.jpg" class="d-block w-100" alt="LAND ROVER;">
+                      </div>
+                      <div class="carousel-item">
+                        VOLKSWAGEN
+                        <img src="../../../assets/imagenAutos/3-VOLKSWAGEN.jpg" class="d-block w-100" alt="Wolkswagen;">
+                      </div>
+                      <div class="carousel-item">
+                        Renault 12
+                        <img src="../../../assets/imagenAutos/4-RENAULT-12.webp" class="d-block w-100" alt="4-RENAULT-12;">
+                      </div>
+                      <div class="carousel-item">
+                        Mazda 323
+                        <img src="../../../assets/imagenAutos/5-Mazda-323.jpg" class="d-block w-100" alt="Mazda;">
+                      </div>
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+    <div class="card-footer">
+        <button class='btn btn-outline-secondary' style="width:110px" (click)="onBack()">
+            Regreso
+        </button>
+    </div>
+</div>
